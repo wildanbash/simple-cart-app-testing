@@ -27,3 +27,11 @@ decrButton.addEventListener('click', () => {
 discButton.addEventListener('click', () => {
   textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value, discInput.value)}`;
 })
+
+priceInput.addEventListener('keyup', () => {
+  textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value, discInput.value)}`;
+});
+
+qtyInput.addEventListener('keyup', () => {
+  textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value, discInput.value)}`;
+});
