@@ -1,5 +1,5 @@
-const incrementQty = (qty) => qty + 1;
-const decrementQty = (qty) => qty - 1;
+const incrementQty = (qty) => parseInt(qty) + 1;
+const decrementQty = (qty) => parseInt(qty) - 1;
 
 module.exports = { 
     incrementQty, 

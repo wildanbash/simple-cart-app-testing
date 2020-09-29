@@ -12,5 +12,7 @@ incrButton.addEventListener('click', () => {
 });
 
 decrButton.addEventListener('click', () => {
-  qtyInput.value = decrementQty(qtyInput.value);
+  if(parseInt(qtyInput.value) > 1){
+    qtyInput.value = decrementQty(qtyInput.value);  
+  }
 });
