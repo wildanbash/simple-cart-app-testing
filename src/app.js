@@ -9,15 +9,21 @@ const decrButton = document.querySelector('#decr');
 const qtyInput = document.querySelector('#qty');
 const textSubTotal = document.querySelector('#subtotal');
 const priceInput = document.querySelector("#price");
+const discInput = document.querySelector('#code');
+const discButton = document.querySelector('#confirmButton');
 
 incrButton.addEventListener('click', () => {
   qtyInput.value = incrementQty(qtyInput.value);
-  textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value)}`;
+  textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value, discInput.value)}`;
 });
 
 decrButton.addEventListener('click', () => {
   if(parseInt(qtyInput.value) > 1){
     qtyInput.value = decrementQty(qtyInput.value);  
-    textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value)}`;
+    textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value, discInput.value)}`;
   }
 });
+
+discButton.addEventListener('click', () => {
+  textSubTotal.textContent = `Rp. ${subTotal(priceInput.value, qtyInput.value, discInput.value)}`;
+})
